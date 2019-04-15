@@ -1,6 +1,5 @@
 package Challenges;
 
-
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;

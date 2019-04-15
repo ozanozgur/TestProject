@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="2" parallel="tests">
+
+    <test name="ChromeTest" parallel="classes" thread-count="1">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Challenges.LoginTest">
+                <methods>
+                    <include name="validUserNameEmptyPassword"/>
+                    <include name="validUserNameValidPassword"/>
+                    <include name="emptyUserNameVaalidPassword"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="FirefoxTest" thread-count="1" >
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="Challenges.LoginTest">
+                <methods>
+                    <include name="validUserNameInvalidPassword"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LazyLoadTest" preserve-order="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Challenges.LazyLoadTest"/>
+        </classes>
+    </test>
+    <test name="VerifyBoutiqueLinks" preserve-order="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Challenges.VerifyBoutiqueLinks"/>
+        </classes>
+    </test>
+</suite>
+
